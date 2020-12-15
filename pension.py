@@ -20,16 +20,11 @@ fees = st.sidebar.slider('Investment Fees', min_value=0.00, value=1.00, max_valu
 df = pd.DataFrame(index=(np.arange(1, years)))
 df['Inflow'] = (inflow * 12) * df.index
 
-st.write(returns)
 returns2 = (returns - (fees)*(1 + returns))
-st.write(returns2)
-
-
 gross_rate = ((1 + (returns / 1)) ** (1/12)) -1
 net_rate =  ((1 + (returns2 / 1)) ** (1/12)) -1
 
-st.write(gross_rate)
-st.write(net_rate)
+
 df['Compound']  = (initial * (1 + gross_rate) ** (df.index * 12)) + inflow * ( ( ( 1 + gross_rate) **(df.index * 12) - 1) / gross_rate)
 df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflow * ( ( ( 1 + net_rate) **(df.index * 12) - 1) / net_rate)
 #df['Gains'] = df['Compound'] - df['Inflow']
