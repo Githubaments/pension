@@ -33,7 +33,7 @@ df = df.astype(int)
 
 
 fig = px.line(df)
-fig.add_trace(go.Scatter(x=df.index , y=df['Compound fees'] ,
+fig.add_trace(go.Scatter(x=df.index , y=df['Compound Net fees'] ,
                          mode = 'lines',
                          fill='tonexty'))
 st.plotly_chart(fig)
