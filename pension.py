@@ -31,7 +31,7 @@ net_rate =  ((1 + (returns2 / 1)) ** (1/12)) -1
 st.write(gross_rate)
 st.write(net_rate)
 df['Compound']  = (initial * (1 + gross_rate) ** (df.index * 12)) + inflow * ( ( ( 1 + gross_rate) **(df.index * 12) - 1) / gross_rate)
-['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflow * ( ( ( 1 + net_rate) **(df.index * 12) - 1) / net_rate)
+df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflow * ( ( ( 1 + net_rate) **(df.index * 12) - 1) / net_rate)
 #df['Gains'] = df['Compound'] - df['Inflow']
 
 df = df.astype(int)
