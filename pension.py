@@ -35,7 +35,7 @@ df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflo
 df = df.astype(int)
 
 if inflow == 0:
-  df.drop(['inflow'], axis=1)
+  df.drop(['Inflow'], axis=1)
 
 
 fig = px.line(df)
