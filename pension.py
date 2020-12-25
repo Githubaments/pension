@@ -10,6 +10,9 @@ import requests
 #import SessionState
 
 
+st.set_page_config(page_title='Pension Calculator', page_icon="https://raw.githubusercontent.com/Githubaments/Images/main/favicon.ico")
+
+
 years = st.sidebar.slider('Investment timeline', min_value=1, value=50, max_value=100, format="%i ", key=0) +1
 returns = st.sidebar.slider('Investment Returns', min_value=0.00, value=5.00, max_value=100.00, format="%f %%", key=1) / 100
 initial = int(st.sidebar.text_input('Initial Amount', value=0, max_chars=20, key=None, type='default'))
@@ -30,6 +33,9 @@ df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflo
 #df['Gains'] = df['Compound'] - df['Inflow']
 
 df = df.astype(int)
+
+if inflow == 0:
+  df.drop(['inflow'], axis=1)
 
 
 fig = px.line(df)
