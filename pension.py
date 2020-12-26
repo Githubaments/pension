@@ -66,6 +66,8 @@ reqd_index = df_area.query('Growth > Inflow').index[0]
 
 max_line = df['Compound'].max()
 
+st.write(df)
+
 df['Annual Growth'] = df['Growth'].diff()
 df.iat['0','Annual Growth'] = 0
 
