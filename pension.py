@@ -43,13 +43,6 @@ fig = px.line(df)
 
 st.plotly_chart(fig)
 
-df['Fee'] = df['Compound'] - df['Compound Net fees']
-df['Growth'] = df['Compound Net fees'] - df['Inflow']
-
-fig = px.area(df, x="year", y="pop", color="continent",
-	      line_group="country")
-
-
 fig.add_trace(go.Scatter(name='Fees', x=df.index , y=df['Compound'] ,
                          mode = 'lines',
                          fill='tonexty'))
