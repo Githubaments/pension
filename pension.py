@@ -58,6 +58,12 @@ df['Growth'] = df['Compound Net fees'] - df['Inflow']
 
 df_area = df[['Inflow','Growth','Fee']]
 
+st.write(df_area[df_area['Growth'].gt(inflow)].index[0])
+
+st.write(df.index[df_area[df_area['Growth'].gt(inflow)].index[0]])
+
+
+
 fig = px.area(df_area)
 
 st.plotly_chart(fig)
