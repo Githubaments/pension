@@ -71,7 +71,7 @@ max_line = df['Compound'].max()
 fig = px.area(df_area)
 
 fig.add_shape(type="line",
-    x0=reqd_index, y0=0, x1=reqd_index, y1=max_line,
+    x0=reqd_index, y0=0, x1=reqd_index,
     line=dict(color="RoyalBlue",width=3)
 )
 
