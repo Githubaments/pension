@@ -66,12 +66,14 @@ reqd_index = df_area.query('Growth > Inflow').index[0]
 
 max_line = df['Compound'].max()
 
-
+df['Annual Growth'] = df['Growth'].diff()
+year_surpass = df.query('Annual Growth > Inflow').index[0]
+st.write(year_surpass)
 
 fig = px.area(df_area)
 
 fig.add_shape(type="line",
-    x0=reqd_index, y0=0, x1=reqd_index,
+    x0=reqd_index, y0=0, x1=reqd_index, y1=max_line,
     line=dict(color="RoyalBlue",width=3)
 )
 
@@ -79,7 +81,7 @@ st.plotly_chart(fig)
 
 
 fig.add_vrect(
-    x0=5, x1=10,
+    x0=5, x1=10,y0=0,y1=max_line,
     fillcolor="RoyalBlue", opacity=0.5,
     layer="below", line_width=0,
 )
