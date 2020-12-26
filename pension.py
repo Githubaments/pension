@@ -62,14 +62,18 @@ st.write(df_area[df_area['Growth'].gt(inflow * 12)].index[0])
 
 st.write(df.index[df_area[df_area['Growth'].gt(inflow * 12)].index[0]])
 
-reqd_index = df_area.query('Growth > Inflow').index.tolist()
-st.write(reqd_index)
+reqd_index = df_area.query('Growth > Inflow').index[0]
 
-
+max_line = df['Compound'].max()
 
 
 
 fig = px.area(df_area)
+
+fig.add_shape(type="line",
+    x0=reqd_index, y0=0, x1=reqd_index, y1=max_line,
+    line=dict(color="RoyalBlue",width=3)
+)
 
 st.plotly_chart(fig)
 
