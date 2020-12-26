@@ -62,6 +62,11 @@ st.write(df_area[df_area['Growth'].gt(inflow * 12)].index[0])
 
 st.write(df.index[df_area[df_area['Growth'].gt(inflow * 12)].index[0]])
 
+reqd_index = df_area.query('Growth > Inflow').index.tolist()
+st.write(reqd_index)
+
+
+
 
 
 fig = px.area(df_area)
