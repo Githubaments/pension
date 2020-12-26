@@ -34,12 +34,11 @@ df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflo
 
 df = df.astype(int)
 
-if inflow == 0 and initial == 0:
-  st.stop()
-
 if inflow == 0:
-  df.drop(['Inflow'], axis=1)
-
+	df.drop(['Inflow'], axis=1)
+	if initial == 0:
+		st.stop()
+		
 fig = px.line(df)
 
 st.plotly_chart(fig)
