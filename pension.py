@@ -37,11 +37,16 @@ df = df.astype(int)
 if inflow == 0:
   df.drop(['Inflow'], axis=1)
 
+st.plotly_chart(fig)
+
 
 fig = px.line(df)
 
-if df['Compound Net fees'].max == 0:
+if df['Compound Net fees'].max != 0:
   fig.add_trace(go.Scatter(x=df.index , y=df['Compound Net fees'] ,
+                         mode = 'lines',
+                         fill='tonexty'))
+    fig.add_trace(go.Scatter(x=df.index , y=df['Inflow'] ,
                          mode = 'lines',
                          fill='tonexty'))
 st.plotly_chart(fig)
