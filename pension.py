@@ -47,13 +47,12 @@ st.plotly_chart(fig)
 
 fig.add_trace(go.Scatter(name='Fees', x=df.index , y=df['Compound'] ,
                          mode = 'lines',
-                         fill='tonexty'),
-                         secondary_y=True)
+                         fill='tonexty'))
 
 fig.add_trace(go.Scatter(name='Growth',x=df.index , y=df['Inflow'] ,
                          mode = 'lines',
-                         fill='tonexty'),
-                         secondary_y=True)
+                         fill='tonexty'))
+
 st.plotly_chart(fig)
 
 
