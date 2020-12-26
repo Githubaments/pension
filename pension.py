@@ -63,8 +63,7 @@ st.plotly_chart(fig)
 df['Fee'] = df['Compound'] - df['Compound Net fees']
 df['Growth'] = df['Compound Net fees'] - df['Inflow']
 
-fig = px.area(df, x="year", y="pop", color="continent",
-	      line_group="country")
+fig = px.area(df)
 
 st.plotly_chart(fig)
 
