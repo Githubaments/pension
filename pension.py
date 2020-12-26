@@ -77,6 +77,15 @@ fig.add_shape(type="line",
 
 st.plotly_chart(fig)
 
+
+fig.add_vrect(
+    x0=5, x1=10,
+    fillcolor="RoyalBlue", opacity=0.5,
+    layer="below", line_width=0,
+)
+
+st.plotly_chart(fig)
+
 st.write(df)
 
 
