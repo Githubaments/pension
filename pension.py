@@ -34,6 +34,9 @@ df['Compound Net fees']  = (initial * (1 + net_rate) ** (df.index * 12)) + inflo
 
 df = df.astype(int)
 
+if inflow == 0 && initial == 0:
+  st.stop()
+
 if inflow == 0:
   df.drop(['Inflow'], axis=1)
 
