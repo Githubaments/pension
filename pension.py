@@ -45,10 +45,13 @@ st.plotly_chart(fig)
 if df['Compound Net fees'].max != 0:
   fig.add_trace(go.Scatter(name='Fees', x=df.index , y=df['Compound'] ,
                          mode = 'lines',
-                         fill='tonexty'))
+                         fill='tonexty',
+                         secondary_y=True))
+
   fig.add_trace(go.Scatter(name='Growth',x=df.index , y=df['Inflow'] ,
                          mode = 'lines',
-                         fill='tonexty'))
+                         fill='tonexty',
+                         secondary_y=True))
 st.plotly_chart(fig)
 
 
