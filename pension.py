@@ -69,7 +69,7 @@ max_line = df['Compound'].max()
 st.write(df)
 
 df['Annual Growth'] = df['Growth'].diff()
-df.iat['0','Annual Growth'] = 0
+df.iat[0,-1] = 0
 
 st.write(df)
 
