@@ -93,11 +93,7 @@ fig.add_vrect(
     layer="below", line_width=0,
 )
 
-fig.add_vrect(
-    x0=reqd_index, x1=years,y0=0,y1=max_line,
-    opacity=0.2,
-    layer="below", line_width=0,
-)
+
 
 st.plotly_chart(fig)
 
