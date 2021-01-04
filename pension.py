@@ -73,8 +73,8 @@ df.iat[0,-2] = 0
 st.write(df)
 
 
-year_surpass = df.query('Growth > Inflow').index[0]
-
+year_surpass = df.query('Annual Growth > @inflow').index[0]
+st.write(year_surpass)
 
 fig = px.area(df_area)
 
@@ -96,6 +96,7 @@ fig.add_vrect(
 fig.add_vrect(
     x0=reqd_index, x1=years - 1,y0=0,y1=max_line,
     opacity=0.2,
+	annotation_text="Annual Growth > Inflow ", annotation_position="top left",
 	fillcolor="red", 
     layer="below", line_width=0,
 )
