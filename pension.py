@@ -60,6 +60,8 @@ df_area = df[['Inflow','Growth','Fee']]
 
 reqd_index = df_area.query('Growth > Inflow').index[0]
 
+st.write(reqd_index)
+
 max_line = df['Compound'].max()
 
 st.write(df)
