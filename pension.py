@@ -90,10 +90,16 @@ st.plotly_chart(fig)
 fig.add_vrect(
     x0=0, x1=reqd_index,y0=0,y1=max_line,
     opacity=0.2,
+	fillcolor="RoyalBlue", 
     layer="below", line_width=0,
 )
 
-
+fig.add_vrect(
+    x0=reqd_index, x1=years,y0=0,y1=max_line,
+    opacity=0.2,
+	fillcolor="red", 
+    layer="below", line_width=0,
+)
 
 st.plotly_chart(fig)
 
