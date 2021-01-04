@@ -88,7 +88,7 @@ st.plotly_chart(fig)
 
 
 fig.add_vrect(
-    x0=5, x1=10,y0=0,y1=max_line,
+    x0=0, x1=reqd_index,y0=0,y1=max_line,
     fillcolor="RoyalBlue", opacity=0.5,
     layer="below", line_width=0,
 )
