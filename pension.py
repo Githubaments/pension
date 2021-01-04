@@ -95,7 +95,7 @@ fig.add_vrect(
 )
 
 fig.add_vrect(
-    x0=reqd_index, x1=years,y0=0,y1=max_line,
+    x0=reqd_index, x1=years - 1,y0=0,y1=max_line,
     opacity=0.2,
 	fillcolor="red", 
     layer="below", line_width=0,
