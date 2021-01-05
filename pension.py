@@ -110,7 +110,7 @@ fig.add_vrect(
     opacity=0.2,
 	annotation_text="Annual Growth > Inflow ", annotation_position="top left",
 	fillcolor="purple", 
-    layer="below", line_width=0,
+    line_width=0,
 )
 
 st.plotly_chart(fig)
