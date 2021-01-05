@@ -72,7 +72,7 @@ df.iat[0,-2] = 0
 st.write(df)
 
 
-year_surpass = df.query('Annual Growth > Inflow').index[0]
+year_surpass = df.query('Growth > Inflow').index[0]
 st.write(year_surpass)
 
 fig = px.area(df_area)
