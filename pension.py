@@ -78,8 +78,7 @@ inflow_s = np.argmax(df['Annual Growth'] > inflow * 12) + 1
 
 total_inflow_s = df.query('Growth > Inflow').index[0]
 
-st.write(total_inflow_s)
-st.write(inflow_s)
+
 
 
 fig = px.area(df_area)
@@ -89,7 +88,6 @@ fig.add_shape(type="line",
     line=dict(color="RoyalBlue",width=3)
 )
 
-st.plotly_chart(fig)
 
 
 fig.add_vrect(
