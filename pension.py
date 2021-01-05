@@ -74,7 +74,7 @@ st.write(df)
 #inflow_s = df.query('Growth > @inflow * 12').index[0]
 #inflow_s = df.query('Annual Growth > @inflow * 12').index[0]
 
-inflow_s = np.argmax(df['Annual Growth'] > inflow * 12)
+inflow_s = np.argmax(df['Annual Growth'] > inflow * 12) + 1
 
 total_inflow_s = df.query('Growth > Inflow').index[0]
 
@@ -93,14 +93,14 @@ st.plotly_chart(fig)
 
 
 fig.add_vrect(
-    x0=0, x1=reqd_index,y0=0,y1=max_line,
+    x0=0, x1=inflow_s,y0=0,y1=max_line,
     opacity=0.2,
 	fillcolor="RoyalBlue", 
     layer="below", line_width=0,
 )
 
 fig.add_vrect(
-    x0=reqd_index, x1=years - 1,y0=0,y1=max_line,
+    x0=inflow_s, x1=total_inflow_s - 1,y0=0,y1=max_line,
     opacity=0.2,
 	annotation_text="Annual Growth > Inflow ", annotation_position="top left",
 	fillcolor="red", 
