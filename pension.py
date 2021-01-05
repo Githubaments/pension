@@ -100,7 +100,7 @@ fig.add_vrect(
 )
 
 fig.add_vrect(
-    x0=inflow_s, x1=total_inflow_s - 1,y0=0,y1=max_line,
+    x0=inflow_s, x1=total_inflow_s ,y0=0,y1=max_line,
     opacity=0.2,
 	annotation_text="Annual Growth > Inflow ", annotation_position="top left",
 	fillcolor="red", 
