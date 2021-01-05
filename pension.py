@@ -75,6 +75,8 @@ a = df.query('Growth > @inflow').index[0]
 
 year_surpass = df.query('Growth > Inflow').index[0]
 st.write(year_surpass)
+st.write(a)
+
 
 fig = px.area(df_area)
 
