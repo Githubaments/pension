@@ -71,11 +71,12 @@ df.iat[0,-2] = 0
 
 st.write(df)
 
-a = df.query('Growth > @inflow').index[0]
+inflow_s = df.query('Growth > @inflow * 12').index[0]
 
-year_surpass = df.query('Growth > Inflow').index[0]
-st.write(year_surpass)
-st.write(a)
+total_inflow_s = df.query('Growth > Inflow').index[0]
+
+st.write(total_inflow_s)
+st.write(inflow_s)
 
 
 fig = px.area(df_area)
