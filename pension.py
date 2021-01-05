@@ -107,6 +107,14 @@ fig.add_vrect(
     layer="below", line_width=0,
 )
 
+fig.add_vrect(
+    x0=total_inflow_s, x1=years - 1,y0=0,y1=max_line,
+    opacity=0.2,
+	annotation_text="Annual Growth > Inflow ", annotation_position="top left",
+	fillcolor="purple", 
+    layer="below", line_width=0,
+)
+
 st.plotly_chart(fig)
 
 st.write(df)
