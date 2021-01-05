@@ -72,6 +72,7 @@ df.iat[0,-2] = 0
 st.write(df)
 
 inflow_s = df.query('Growth > @inflow * 12').index[0]
+inflow_s = df.query('Annual Growth > @inflow * 12').index[0]
 
 total_inflow_s = df.query('Growth > Inflow').index[0]
 
