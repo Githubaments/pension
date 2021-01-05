@@ -71,6 +71,7 @@ df.iat[0,-2] = 0
 
 st.write(df)
 
+a = df.query('Growth > @inflow').index[0]
 
 year_surpass = df.query('Growth > Inflow').index[0]
 st.write(year_surpass)
